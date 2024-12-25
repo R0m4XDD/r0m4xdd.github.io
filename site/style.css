@@ -1,0 +1,253 @@
+/* Общие стили */
+body {
+  background: linear-gradient(
+    to right,
+    #5a4cda,
+    #0a1353,
+    #0c4988 
+  );
+  background-size: 500% 500%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Анимация появления элементов */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Стили для шапки */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 50px;
+  animation: fadeIn 1s ease forwards; /* Применяем анимацию */
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%; /* Занимает 1/4 ширины сайта */
+  height: 100%;
+  background-color: #333;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateX(-100%); /* Меню изначально скрыто */
+  transition: transform 0.3s ease-in-out; /* Анимация при открытии/закрытии */
+}
+
+nav.open {
+  transform: translateX(0); /* Меню открыто */
+}
+
+nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+/* Стили для контента */
+main {
+  padding: 10px;
+}
+
+.search-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  z-index: 999; /* Обеспечивает, что блок будет поверх других элементов */
+  animation: fadeIn 1s ease forwards; /* Применяем анимацию */
+}
+
+.search-bar input {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar button:hover {
+  transform: translateY(-3px);
+  background-color: #264b28;
+}
+
+h1.text-color {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+  
+  /* Применяем градиент к тексту */
+  background-image: linear-gradient(
+    45deg,
+    #ff0000 0%,
+    #ff4500 16.67%,
+    #ffff00 33.33%,
+    #008000 50%,
+    #00bfff 66.67%,
+    #0000ff 83.33%,
+    #800080 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Анимируем градиент */
+  animation: rainbow 10s ease infinite, fadeIn 1s ease forwards; /* Добавляем анимацию появления */
+}
+
+@keyframes rainbow {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.text-info {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.text-info h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  
+  /* Применяем градиент к тексту */
+  background-image: linear-gradient(
+    45deg,
+    #ff0000 11%,
+    #ff4500 16.67%,
+    #ffff00 33.33%,
+    #008000 50%,
+    #00bfff 66.67%,
+    #0000ff 83.33%,
+    #800080 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Анимируем градиент */
+  animation: rainbow 7s ease infinite, fadeIn 1s ease forwards; /* Добавляем анимацию появления */
+}
+
+.text-info i {
+  color: #ffffff;
+  font-style: italic;
+}
+
+.text-info .centered-text {
+  background-color: #333;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease forwards; /* Применяем анимацию */
+}
+
+.text-info .centered-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.text-info .centered-text:hover::before {
+  opacity: 1;
+}
+
+.text-info .centered-text .more-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.text-info .centered-text:hover .more-button {
+  opacity: 1;
+}
+
+/* Добавьте этот код в ваш основной CSS файл */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  height: 100%;
+  overflow-y: auto;
+}
