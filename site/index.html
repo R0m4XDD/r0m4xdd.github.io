@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гейбобер</title>
+</head>
+<body>
+    <header>
+        <div class="menu-icon">&#9776;</div>
+        <h1 class="text-color">Гейбобер</h1>
+    </header>
+
+    <nav>
+        <a href="Сайт ГейБобра.html">Главная</a>
+        <a href="page.html">Ассортимент</a>
+        <a href="#drinks">Напитки</a>
+        <a href="#coffee">Виды кофе</a>
+        <a href="#desserts">Виды десертов</a>
+        <a href="about.html">О нас</a>
+    </nav>
+    
+    <main>
+        <div id="main" class="text-info">
+            <h1>Добро пожаловать на сайт кофейни Гейбобер </h1>
+            <main>
+              <div id="main" class="text-info">
+                <div class="centered-text">
+                <p>Мы рады приветствовать вас на нашем примитивном сайте с очень веселым названием кофейни. Тут вы сможете заказать, найти, проверить все что вас интересует. Мы предлагаем широкий ассортимент кофе, чая, десертов и других напитков. Наша команда профессионалов сделает все, чтобы вы остались довольны нашим сервисом и качеством продукции.</p>
+                <a href="about.html" class="more-button">Подробнее</a>
+              </div>
+            </div>
+              <div id="assortment" class="search-bar">
+                  <input type="text" placeholder="Поиск...">
+                  <button>Найти</button>
+              </div>
+          
+              <!-- Остальной контент -->
+          </main>
+          
+        </div>
+
+        <div id="assortment" class="search-bar">
+            <input type="text" placeholder="Поиск...">
+            <button>Найти</button>
+        </div>
+
+        <div id="drinks">
+            <!-- Контент для раздела "Напитки" -->
+        </div>
+
+        <div id="coffee">
+            <!-- Контент для раздела "Виды кофе" -->
+        </div>
+
+        <div id="desserts">
+            <!-- Контент для раздела "Виды десертов" -->
+        </div>
+
+        <div id="about">
+            <!-- Контент для раздела "О нас" -->
+        </div>
+    </main>
+
+    <script>
+        // Скрипт для открытия/закрытия меню
+        const nav = document.querySelector('nav');
+        const menuIcon = document.querySelector('.menu-icon');
+        
+        menuIcon.addEventListener('click', () => {
+          nav.classList.toggle('open');
+        });
+        
+        document.addEventListener('click', (event) => {
+          if (!event.target.closest('.menu-icon') && !event.target.closest('nav')) {
+            nav.classList.remove('open');
+          }
+        });
+    </script>
+</body>
+</html> 
